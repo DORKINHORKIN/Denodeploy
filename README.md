@@ -1,3 +1,35 @@
+# Denodeploy Monorepo
+
+This is a monorepo with both backend and frontend using the Hono framework.
+
+## Structure
+
+- `backend/`: Hono API server with CORS support
+- `frontend/`: Hono-powered frontend serving HTML with HTMX and Tailwind
+
+## Running
+
+To run the backend:
 ```
-deno task start
+deno task dev-backend
 ```
+
+To run the frontend:
+```
+deno task dev-frontend
+```
+
+Backend runs on http://localhost:3000
+Frontend runs on http://localhost:8000
+
+Open the frontend in browser and click the button to fetch from API.
+
+## Features
+
+- **Backend**: Hono API with CORS middleware
+  - `GET /` - Hello message
+  - `GET /api` - JSON API response
+- **Frontend**: Hono-powered static file server
+  - `GET /` - Main HTML page with HTMX
+  - `GET /index.html` - Same as root
+  - `GET /health` - Health check endpoint

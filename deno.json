@@ -1,11 +1,13 @@
 {
   "imports": {
-    "hono": "jsr:@hono/hono@^4.9.5"
+    "hono": "npm:hono"
   },
+  "workspaces": ["backend", "frontend"],
   "tasks": {
-    "start": "deno run --allow-net --watch -A main.tsx",
-    "production": "deno run --allow-net -A main.tsx",
-    "build": "deno compile --unstable --allow-net -A -o server main.tsx"
+    "dev-backend": "deno run -A --watch backend/main.ts",
+    "dev-frontend": "deno run -A --watch frontend/main.ts",
+    "production-backend": "deno run --allow-net -A backend/main.ts",
+    "production-frontend": "deno run --allow-net -A frontend/main.ts"
   },
   "compilerOptions": {
     "jsx": "precompile",
